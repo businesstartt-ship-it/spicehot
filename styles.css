@@ -54,3 +54,4 @@ input[type=range]::-webkit-slider-thumb{ -webkit-appearance:none; width:32px; he
 .faq-ans{ max-height:0; overflow:hidden; transition:max-height .35s ease; }
 
 .deva{ font-family:'Noto Sans Devanagari','Space Grotesk',sans-serif; }
+.bangla{ font-family:'Hind Siliguri','Space Grotesk',sans-serif; }
