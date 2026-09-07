@@ -221,8 +221,44 @@ function toggleCart(open){
 }
 function checkout(){
   if(cart.length===0){ showToast('Your stash is empty!'); return; }
-  cart = []; saveCart(); renderCart();
   toggleCart(false);
+  setTimeout(openCheckout, 400);
+}
+function openCheckout(){
+  const modal = document.getElementById('checkoutModal');
+  modal.classList.remove('hidden'); modal.classList.add('flex');
+  requestAnimationFrame(()=>{
+    modal.style.opacity='1';
+    modal.querySelector('.modal-card').style.opacity='1';
+    modal.querySelector('.modal-card').style.transform='scale(1)';
+  });
+}
+function closeCheckout(){
+  const modal = document.getElementById('checkoutModal');
+  modal.querySelector('.modal-card').style.opacity='0';
+  modal.querySelector('.modal-card').style.transform='scale(.9)';
+  setTimeout(()=>{ modal.classList.add('hidden'); modal.classList.remove('flex'); },300);
+}
+function submitOrder(){
+  const name = document.getElementById('coName').value.trim();
+  const phone = document.getElementById('coPhone').value.trim();
+  const address = document.getElementById('coAddress').value.trim();
+  const pay = document.getElementById('coPay').value;
+  const err = document.getElementById('coError');
+  if(!name || !phone || !address){ err.textContent='Please fill in name, phone and address.'; err.classList.remove('hidden'); return; }
+  if(!/^01\d{9}$/.test(phone)){ err.textContent='Phone must be 11 digits starting with 01.'; err.classList.remove('hidden'); return; }
+  err.classList.add('hidden');
+  let msg = `🔥 HOTSPY ORDER%0A%0A👤 Name: ${encodeURIComponent(name)}%0A📞 Phone: ${encodeURIComponent(phone)}%0A🏠 Address: ${encodeURIComponent(address)}%0A💳 Payment: ${encodeURIComponent(pay)}%0A%0A📦 Order:%0A`;
+  let subtotal = 0;
+  cart.forEach(c=>{
+    const p = PRODUCTS.find(x=>x.id===c.id);
+    subtotal += p.price*c.qty;
+    msg += `• ${encodeURIComponent(p.name)} x ${c.qty} = $${(p.price*c.qty).toFixed(2)}%0A`;
+  });
+  msg += `%0A💰 Total: $${subtotal.toFixed(2)}`;
+  window.open(`https://wa.me/8801XXXXXXXXX?text=${msg}`, '_blank');
+  cart = []; saveCart(); renderCart();
+  closeCheckout();
   setTimeout(openOrder, 400);
 }
 
