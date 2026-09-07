@@ -176,7 +176,25 @@ tailwind.config = {
     <button onclick="closeOrder()" class="btn-fire font-bold tracking-widest py-3 rounded-full w-full">BACK TO BASE</button>
   </div>
 </div>
-
+<!-- CHECKOUT FORM MODAL -->
+<div id="checkoutModal" class="fixed inset-0 z-[98] hidden items-center justify-center p-4 modal-bg">
+  <div class="absolute inset-0 bg-black/75" onclick="closeCheckout()"></div>
+  <div class="modal-card relative bg-cream text-ink rounded-2xl max-w-sm w-full p-8 opacity-0 scale-90 max-h-[90vh] overflow-y-auto">
+    <h3 class="font-display text-3xl mb-1">CHECKOUT</h3>
+    <p class="text-ink/60 text-sm mb-5">Cash on delivery available 🇧🇩</p>
+    <div class="space-y-3">
+      <input id="coName" type="text" placeholder="Your full name" class="w-full rounded-xl border-2 border-ink/20 px-4 py-3 focus:outline-none focus:border-ember font-semibold">
+      <input id="coPhone" type="text" placeholder="Phone (01XXXXXXXXX)" class="w-full rounded-xl border-2 border-ink/20 px-4 py-3 focus:outline-none focus:border-ember font-semibold">
+      <textarea id="coAddress" rows="3" placeholder="Full delivery address" class="w-full rounded-xl border-2 border-ink/20 px-4 py-3 focus:outline-none focus:border-ember font-semibold"></textarea>
+      <select id="coPay" class="w-full rounded-xl border-2 border-ink/20 px-4 py-3 focus:outline-none focus:border-ember font-semibold">
+        <option value="Cash on Delivery">Cash on Delivery</option>
+        <option value="bKash (send after confirmation call)">bKash (send after confirmation call)</option>
+      </select>
+    </div>
+    <p id="coError" class="text-blood text-sm font-semibold mt-3 hidden"></p>
+    <button onclick="submitOrder()" class="w-full btn-fire font-bold tracking-widest py-3 rounded-full mt-5">PLACE ORDER</button>
+  </div>
+</div>
 <main id="top">
 <!-- HERO -->
 <section class="relative min-h-[92vh] flex items-center grid-paper overflow-hidden pt-10 pb-16">
