@@ -256,7 +256,7 @@ function submitOrder(){
     msg += `• ${encodeURIComponent(p.name)} x ${c.qty} = $${(p.price*c.qty).toFixed(2)}%0A`;
   });
   msg += `%0A💰 Total: $${subtotal.toFixed(2)}`;
-  window.open(`https://wa.me/8801XXXXXXXXX?text=${msg}`, '_blank');
+  window.open(`https://wa.me/8801410162903?text=${msg}`, '_blank');
   cart = []; saveCart(); renderCart();
   closeCheckout();
   setTimeout(openOrder, 400);
