@@ -79,7 +79,7 @@ function renderProducts(){
       <div class="jar-wrap mb-6" data-jar="${p.id}"></div>
       <p class="text-ember text-xs font-bold tracking-widest mb-1">${p.tagline.toUpperCase()}</p>
       <h3 class="font-display text-2xl mb-1">${p.name}</h3>
-      <p class="text-cream/50 text-xs mb-3 deva">${p.hindi}</p>
+     <p class="text-cream/50 text-xs mb-3 bangla">${p.hindi}</p>
       <div class="mb-4">${heatPips(p.heat,8)}</div>
       <p class="text-cream/60 text-sm mb-5">${p.desc}</p>
       <div class="flex items-center justify-between w-full mt-auto">
