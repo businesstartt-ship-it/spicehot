@@ -1,12 +1,12 @@
 /* ---------------- DATA ---------------- */
 const PRODUCTS = [
-  { id:'chilli', name:'Chilli Powder', hindi:'मिर्च पाउडर', tagline:'Blazing Red Heat', price:8.99, heat:8,
+  { id:'chilli', name:'Chilli Powder', hindi:' মরিচ গুঁড়া', tagline:'Blazing Red Heat', price:8.99, heat:8,
     accent:'#FF2D1A', accent2:'#7A0C0C', icon:'fa-pepper-hot',
     desc:'Sun-dried red chillies stone-ground into a fiery, vibrant powder. Deep color, bold heat, zero shortcuts — perfect for curries, marinades and everything that needs a kick.' },
-  { id:'cumin', name:'Cumin Powder', hindi:'जीरा पाउडर', tagline:'Earthy Warm Depth', price:7.49, heat:2,
+  { id:'cumin', name:'Cumin Powder', hindi:'জিরা গুঁড়া', tagline:'Earthy Warm Depth', price:7.49, heat:2,
     accent:'#C97C2B', accent2:'#5c3a12', icon:'fa-seedling',
     desc:'Toasted whole cumin seeds ground fresh for maximum aroma. Warm, nutty and earthy — the backbone spice for curries, roasted veggies and spice blends.' },
-  { id:'turmeric', name:'Turmeric Powder', hindi:'हल्दी पाउडर', tagline:'Golden Glow Root', price:6.99, heat:0,
+  { id:'turmeric', name:'Turmeric Powder', hindi:'হলুদ গুঁড়া', tagline:'Golden Glow Root', price:6.99, heat:0,
     accent:'#FFC700', accent2:'#a37c00', icon:'fa-sun',
     desc:'Pure golden turmeric root, sun-cured and finely milled. Earthy, slightly bitter-sweet and packed with color — essential for curries, lattes and wellness shots.' },
 ];
